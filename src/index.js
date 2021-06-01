@@ -13,7 +13,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <React.Fragment>
-        <Route exact path='/ginkgo-app' component={Home} />
+        <Route exact path='/ginkgo-app/' component={Home} />
       </React.Fragment>
     </BrowserRouter>
   </Provider>,
