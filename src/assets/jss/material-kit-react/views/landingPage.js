@@ -4,6 +4,10 @@ const landingPageStyle = {
   container: {
     zIndex: "12",
     color: "#FFFFFF",
+    padding:'60px',
+    display:'flex',
+    justifyContent:'center',
+    flexWrap: 'wrap',
     ...container,
   },
   title: {
