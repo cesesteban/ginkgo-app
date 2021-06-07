@@ -16,8 +16,7 @@ import GridItem from "components/Grid/GridItem.js";
 import Parallax from "components/Parallax/Parallax.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
-
-import CardCategory from "components/Card/CardCategory";
+import Catalog from "components/Catalog/Catalog";
 
 // Sections for this page
 //import ProductSection from "./Sections/ProductSection.js";
@@ -70,9 +69,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <CardCategory/>
-          <CardCategory/>
-          <CardCategory/>
+          <Catalog/>
           {/* <ProductSection /> */}
           {/* <TeamSection />
           <WorkSection /> */}

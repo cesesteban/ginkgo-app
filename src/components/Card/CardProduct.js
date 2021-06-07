@@ -13,30 +13,24 @@ const useStyles = makeStyles({
     },
 });
 
-export default function CardCategory({category,setChange,setCategoryProduct}) {
+export default function CardProduct({product}) {
     const classes = useStyles();
-
-    function onSubmit(){
-        setChange('False')
-        setCategoryProduct(category.category)
-    }
-
     return (
         <Card className={classes.root}>
-            <CardActionArea onClick={onSubmit}>
+            <CardActionArea>
                 <CardMedia
                     component="img"
-                    alt={category.category}
+                    alt={product.product}
                     height="140"
-                    image={category.img}
-                    title={category.category}
+                    image={product.img}
+                    title={product.product}
                 />                
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {category.category}
+                        {product.product}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {category.description}
+                        {product.description}
                     </Typography>
                 </CardContent>
             </CardActionArea>

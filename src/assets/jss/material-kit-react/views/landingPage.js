@@ -7,6 +7,7 @@ const landingPageStyle = {
     padding:'60px',
     display:'flex',
     justifyContent:'center',
+    flexWrap: 'wrap',
     ...container,
   },
   title: {
