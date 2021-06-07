@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/ginkgo-app/static/css/main.d781a375.chunk.css",
-    "main.js": "/ginkgo-app/static/js/main.d868c4b3.chunk.js",
-    "main.js.map": "/ginkgo-app/static/js/main.d868c4b3.chunk.js.map",
+    "main.js": "/ginkgo-app/static/js/main.6f8044e0.chunk.js",
+    "main.js.map": "/ginkgo-app/static/js/main.6f8044e0.chunk.js.map",
     "runtime-main.js": "/ginkgo-app/static/js/runtime-main.f6081607.js",
     "runtime-main.js.map": "/ginkgo-app/static/js/runtime-main.f6081607.js.map",
-    "static/js/2.89a87d89.chunk.js": "/ginkgo-app/static/js/2.89a87d89.chunk.js",
-    "static/js/2.89a87d89.chunk.js.map": "/ginkgo-app/static/js/2.89a87d89.chunk.js.map",
+    "static/js/2.201f0aa2.chunk.js": "/ginkgo-app/static/js/2.201f0aa2.chunk.js",
+    "static/js/2.201f0aa2.chunk.js.map": "/ginkgo-app/static/js/2.201f0aa2.chunk.js.map",
     "index.html": "/ginkgo-app/index.html",
     "static/css/main.d781a375.chunk.css.map": "/ginkgo-app/static/css/main.d781a375.chunk.css.map",
-    "static/js/2.89a87d89.chunk.js.LICENSE.txt": "/ginkgo-app/static/js/2.89a87d89.chunk.js.LICENSE.txt",
+    "static/js/2.201f0aa2.chunk.js.LICENSE.txt": "/ginkgo-app/static/js/2.201f0aa2.chunk.js.LICENSE.txt",
     "static/media/frutos-seco.jpg": "/ginkgo-app/static/media/frutos-seco.7da90c00.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.f6081607.js",
-    "static/js/2.89a87d89.chunk.js",
+    "static/js/2.201f0aa2.chunk.js",
     "static/css/main.d781a375.chunk.css",
-    "static/js/main.d868c4b3.chunk.js"
+    "static/js/main.6f8044e0.chunk.js"
   ]
 }
