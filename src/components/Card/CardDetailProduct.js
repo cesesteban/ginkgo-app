@@ -72,7 +72,7 @@ export default function CardDetailProduct({ setChange, product }) {
     return (
         <div>
             <div className={classes.arrowBack}>
-                <ArrowBackIcon onClick={arrowBack} color='primary' />
+                <ArrowBackIcon onClick={arrowBack} color='withe' />
             </div>
             
             <GridContainer className={classes.container}>

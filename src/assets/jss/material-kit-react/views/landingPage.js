@@ -29,7 +29,8 @@ const landingPageStyle = {
     position: "relative",
     zIndex: "3",
   },
-  mainRaised: {
+  mainRaised: {    
+    backgroundColor:"initial",
     margin: "-60px 30px 0px",
     borderRadius: "6px",
     boxShadow:
