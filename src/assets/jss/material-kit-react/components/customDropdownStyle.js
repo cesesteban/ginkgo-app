@@ -52,6 +52,10 @@ const customDropdownStyle = (theme) => ({
   },
   dropdownItem: {
     ...defaultFont,
+    height:'30px',
+    maxHeight:'30px',
+    maxWidth:'400px',
+    with:'400px',
     fontSize: "13px",
     padding: "10px 20px",
     margin: "0 5px",
@@ -64,7 +68,10 @@ const customDropdownStyle = (theme) => ({
     height: "fit-content",
     color: "#333",
     whiteSpace: "nowrap",
-    minHeight: "unset",
+    minHeight: "30px",
+    minWidth: "360px",
+    marginTop:'15px',
+    marginLeft:'15px'
   },
   blackHover: {
     "&:hover": {

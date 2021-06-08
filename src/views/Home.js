@@ -17,6 +17,7 @@ import Parallax from "components/Parallax/Parallax.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import Catalog from "components/Catalog/Catalog";
+import HeaderLinks from "components/Header/HeaderLinks";
 
 // Sections for this page
 //import ProductSection from "./Sections/ProductSection.js";
@@ -36,7 +37,7 @@ export default function LandingPage(props) {
         color="transparent"
         routes={dashboardRoutes}
         brand="GINKGO"
-        //rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
@@ -69,7 +70,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <Catalog/>
+          <Catalog />
           {/* <ProductSection /> */}
           {/* <TeamSection />
           <WorkSection /> */}

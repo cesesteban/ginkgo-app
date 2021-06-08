@@ -64,7 +64,7 @@ export default function CustomDropdown(props) {
   });
   const dropdownItem = classNames({
     [classes.dropdownItem]: true,
-    [classes[hoverColor + "Hover"]]: true,
+    [classes[hoverColor + "Hover"]]: false,
     [classes.noLiPadding]: noLiPadding,
     [classes.dropdownItemRTL]: rtlActive,
   });

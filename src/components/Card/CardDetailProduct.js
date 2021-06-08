@@ -9,6 +9,8 @@ import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../store/action'
 
 const styles = {
     description: {
@@ -19,12 +21,12 @@ const styles = {
         textAlign: "center !important",
     },
     cardTitle: {
-        padding:'15px',
+        padding: '15px',
         display: "flex",
         position: "relative",
         marginTop: "30px",
         minHeight: "32px",
-        minWidth:'100px',
+        minWidth: '100px',
         textAlign: "center !important",
     },
     container: {
@@ -54,7 +56,7 @@ const styles = {
         display: 'flex',
         justifyContent: 'grid'
     },
-    arrowBack:{
+    arrowBack: {
         marginLeft: '100px'
     }
 
@@ -65,8 +67,14 @@ const useStyles = makeStyles(styles);
 export default function CardDetailProduct({ setChange, product }) {
     const classes = useStyles();
 
+    const dispatch = useDispatch()
+
     function arrowBack() {
         setChange('Product')
+    }
+    function addToCart(product) {
+        console.log(product)
+        dispatch(addProduct(product))
     }
 
     return (
@@ -74,7 +82,7 @@ export default function CardDetailProduct({ setChange, product }) {
             <div className={classes.arrowBack}>
                 <ArrowBackIcon onClick={arrowBack} color='withe' />
             </div>
-            
+
             <GridContainer className={classes.container}>
                 <GridItem xs={12} sm={12} md={8}>
                     <Card profile>
@@ -86,7 +94,7 @@ export default function CardDetailProduct({ setChange, product }) {
                             <p className={classes.description}>
                                 {product.description}
                             </p>
-                            <Button color="secondary">
+                            <Button onClick={() => { addToCart(product) }} color="secondary">
                                 Comprar
                             </Button>
                         </CardBody>
