@@ -17,7 +17,7 @@ export default function CardCategory({category,setChange,setCategoryProduct}) {
     const classes = useStyles();
 
     function onSubmit(){
-        setChange('False')
+        setChange('Product')
         setCategoryProduct(category.category)
     }
 

@@ -1,23 +1,32 @@
 import CardCategory from 'components/Card/CardCategory';
+import CardDetailProduct from 'components/Card/CardDetailProduct';
 import React, { useState } from 'react';
 import categories from '../../assets/categories'
 import CatalogProduct from './CatalogProduct';
 
+
 function Catalog(props) {
 
-    const [change, setChange]=useState('True')
+    const [change, setChange]=useState('Category')
     const [categoryProduct, setCategoryProduct]=useState('')
+    const [product, setProduct]=useState('')
 
-    if(change==='True'){
+    if(change==='Category'){
         return (
             categories.map(category=>{
                 return(<CardCategory setCategoryProduct={setCategoryProduct} setChange={setChange} category={category}/>)            
             })
         );
-    }else{
+    }
+    if(change==='Product'){
         return (
-            <CatalogProduct setChange={setChange} categoryProduct={categoryProduct}/>                  
+            <CatalogProduct setChange={setChange} setProduct={setProduct} categoryProduct={categoryProduct}/>                  
         );
+    }
+    if(change==='ProductDetail'){
+        return(
+            <CardDetailProduct product={product} setChange={setChange}/>
+        )
     }
 }
 

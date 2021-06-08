@@ -11,11 +11,14 @@ const profilePageStyle = {
       width: "100%",
       margin: "0 auto",
       transform: "translate3d(0, -50%, 0)",
+      minHeight: "400px",
+
     },
   },
   description: {
     margin: "1.071rem auto 0",
     maxWidth: "600px",
+    minHeight: "400px",
     color: "#999",
     textAlign: "center !important",
   },

@@ -8,22 +8,31 @@ import products from '../../assets/products'
 
 const useStyles = makeStyles(styles);
 
-function CatalogProduct({categoryProduct, setChange}) {
+function CatalogProduct({categoryProduct, setChange, setProduct}) {
     const classes = useStyles();
 
     function arrowBack() {
-        setChange('True')
+        setChange('Category')
     }
+
+    function viewDetails(){
+        setChange('ProductDetail')
+    }
+
+    function onProduct(product){
+        setProduct(product)
+    }
+    
     return (
         <div>
-        <Button onClick={arrowBack}>
-            <ArrowBackIcon color='primary'/>    
-        </Button>
-        <div className={classes.container}>
-            {products.map(product=>{
-                if(product.category===categoryProduct){return(<CardProduct product={product}/>)}            
-            })}
-        </div>
+            <Button onClick={arrowBack}>
+                <ArrowBackIcon color='primary'/>    
+            </Button>
+            <div className={classes.container}>
+                {products.map(product=>{
+                    if(product.category===categoryProduct){return(<CardProduct viewDetails={viewDetails} onProduct={onProduct} product={product}/>)}            
+                })}
+            </div>
         </div>
     );
 }

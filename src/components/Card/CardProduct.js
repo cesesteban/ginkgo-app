@@ -13,11 +13,15 @@ const useStyles = makeStyles({
     },
 });
 
-export default function CardProduct({product}) {
+export default function CardProduct({product,onProduct,viewDetails}) {
     const classes = useStyles();
+    function onsubmit(){
+        onProduct(product)
+        viewDetails()
+    }
     return (
         <Card className={classes.root}>
-            <CardActionArea>
+            <CardActionArea onClick={onsubmit}>
                 <CardMedia
                     component="img"
                     alt={product.product}
