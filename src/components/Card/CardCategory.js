@@ -10,6 +10,9 @@ const useStyles = makeStyles({
     root: {
         maxWidth: 285,
         margin: '15px',
+        minWidth: '285px',
+        maxHeight: '255px',
+        minHeight: '255px',
     },
 });
 

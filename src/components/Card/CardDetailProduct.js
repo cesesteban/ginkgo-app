@@ -57,7 +57,8 @@ const styles = {
         justifyContent: 'grid'
     },
     arrowBack: {
-        marginLeft: '100px'
+        marginLeft: '100px',
+        color:'black'
     }
 
 };

@@ -25,7 +25,7 @@ function CatalogProduct({categoryProduct, setChange, setProduct}) {
     
     return (
         <div>
-            <Button onClick={arrowBack} color='inherit'>
+            <Button className={classes.arrowBakc} onClick={arrowBack} color='inherit'>
                 <ArrowBackIcon />    
             </Button>
             <div className={classes.container}>
