@@ -4,32 +4,45 @@ import React from "react";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
+//import List from "@material-ui/core/List";
+//import ListItem from "@material-ui/core/ListItem";
+//import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+//import { Apps, CloudDownload } from "@material-ui/icons";
 
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import Button from "components/CustomButtons/Button.js";
+//import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
+//import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
-import Cart from "components/Cart/Cart";
+//import Cart from "components/Cart/Cart";
+import Badge from '@material-ui/core/Badge';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import IconButton from '@material-ui/core/IconButton';
+//import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+export default function HeaderLinks({ setCart,products }) {
   const classes = useStyles();
 
   return (
-    <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <Cart/>
+    <div>
+      <IconButton onClick={()=>setCart('Cart')} aria-label="notifications" color="inherit">
+        <Badge badgeContent={products.length} color="secondary">
+          <ShoppingCartIcon fontSize="large"/>
+        </Badge>
+      </IconButton>
+    </div>
+    /* <List className={classes.list}>
+      <ListItem onClick={()=>setCart('Cart')} className={classes.listItem}>
+        <Badge badgeContent={1} color="primary">
+          <Cart/>
+        </Badge>        
       </ListItem>
 
-      {/* <ListItem className={classes.listItem}>
+      <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           buttonText="Carrito"
@@ -49,8 +62,8 @@ export default function HeaderLinks(props) {
             <CartProduct products={products}/>
           ]}
         />
-      </ListItem>  */}
-      {/* <ListItem className={classes.listItem}>
+      </ListItem>
+      <ListItem className={classes.listItem}>
         <Button
           href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
           color="transparent"
@@ -59,13 +72,13 @@ export default function HeaderLinks(props) {
         >
           <CloudDownload className={classes.icons} /> Download
         </Button>
-      </ListItem> */}
+      </ListItem> 
       <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
+        <Tooltip title="Delete">
           <IconButton aria-label="Delete">
             <DeleteIcon />
           </IconButton>
-        </Tooltip>*/}
+        </Tooltip>
         <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
@@ -116,6 +129,6 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem>
-    </List>
+    </List>*/
   );
 }

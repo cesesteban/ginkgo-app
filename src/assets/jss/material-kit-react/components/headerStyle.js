@@ -36,7 +36,7 @@ const headerStyle = {
     zIndex: "1100",
   },
   fixed: {
-    position: "fixed",
+    position: "relative",
     zIndex: "1100",
   },
   container: {

@@ -108,6 +108,10 @@ const headerLinksStyle = (theme) => ({
       padding: "10px 20px",
     },
   },
+  badge: {
+    top: '15px',
+    right: '15px'
+  },
   ...tooltip,
   marginRight5: {
     marginRight: "5px",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -9,15 +9,17 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import CartProduct from "components/Cart/CartProduct";
+//import GridContainer from "components/Grid/GridContainer.js";
+//import GridItem from "components/Grid/GridItem.js";
 //import Button from "components/CustomButtons/Button.js";
 //import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
+//import Parallax from "components/Parallax/Parallax.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import Catalog from "components/Catalog/Catalog";
 import HeaderLinks from "components/Header/HeaderLinks";
+import { useSelector } from "react-redux";
 
 // Sections for this page
 //import ProductSection from "./Sections/ProductSection.js";
@@ -30,14 +32,17 @@ const useStyles = makeStyles(styles);
 
 export default function LandingPage(props) {
   const classes = useStyles();
+  const [cart, setCart]=useState('Catalog')
+  const products = useSelector(state=>state.products)
   const { ...rest } = props;
   return (
     <div>
       <Header
-        color="transparent"
+        setCart={setCart}
+        color="white"
         routes={dashboardRoutes}
         brand="GINKGO"
-        rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinks products={products} setCart={setCart}/>}
         fixed
         changeColorOnScroll={{
           height: 400,
@@ -45,7 +50,7 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/frutos-seco.jpg").default}>
+      {/*<Parallax filter image={require("assets/img/frutos-seco.jpg").default}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -63,14 +68,15 @@ export default function LandingPage(props) {
               >
                 <i className="fas fa-play" />
                 video
-              </Button> */}
+              </Button> 
             </GridItem>
           </GridContainer>
         </div>
-      </Parallax>
+      </Parallax>*/}
+      
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <Catalog />
+          {cart=='Catalog'?<Catalog />:<CartProduct products={products}/>}
           {/* <ProductSection /> */}
           {/* <TeamSection />
           <WorkSection /> */}

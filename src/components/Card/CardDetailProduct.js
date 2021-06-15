@@ -9,32 +9,46 @@ import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
+import IconButton from '@material-ui/core/IconButton';
+
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../../store/action'
 
 const styles = {
+    cardImg:{
+        maxWidth: "275px",
+        minWidth: "275px",  
+        maxHeight: "150px",
+        minHeight: "150px", 
+    },
     description: {
         margin: "1.071rem auto 0",
-        maxWidth: "600px",
-        minHeight: "155px",
+        maxWidth: "300px",
+        minWidth: "300px",
+        minHeight: "175px",
+        maxHeight: "175px",
         color: "black",
         textAlign: "center !important",
     },
     cardTitle: {
+        color: 'black',
         padding: '15px',
         display: "flex",
         position: "relative",
         marginTop: "30px",
-        minHeight: "32px",
+        maxHeight: "75px",
+        minHeight: "75px",
         minWidth: '100px',
+        maxWidth: '100px',
         textAlign: "center !important",
     },
     container: {
+        maxWidth: '375px',
+        minWidth: '375px',
         color: "#FFFFFF",
-        padding: '60px',
+        padding: '0px',
         display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap'
+        justifyContent: 'flex-start'
     },
     cardCategoryWhite: {
         color: "rgba(255,255,255,.62)",
@@ -80,15 +94,15 @@ export default function CardDetailProduct({ setChange, product }) {
 
     return (
         <div>
-            <div className={classes.arrowBack}>
+            <IconButton>
                 <ArrowBackIcon onClick={arrowBack} color='withe' />
-            </div>
+            </IconButton>
 
             <GridContainer className={classes.container}>
                 <GridItem xs={12} sm={12} md={8}>
                     <Card profile>
                         <CardAvatar profile>
-                            <img src={product.img} alt="..." />
+                            <img className={classes.cardImg} src={product.img} alt="..." />
                         </CardAvatar>
                         <CardBody profile>
                             <h4 className={classes.cardTitle}>{product.product}</h4>

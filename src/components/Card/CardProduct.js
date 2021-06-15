@@ -11,8 +11,8 @@ const useStyles = makeStyles({
         maxWidth: 285,
         margin: '15px',
         minWidth: '285px',
-        maxHeight: '255px',
-        minHeight: '255px',
+        maxHeight: '295px',
+        minHeight: '295px',
     },
 });
 

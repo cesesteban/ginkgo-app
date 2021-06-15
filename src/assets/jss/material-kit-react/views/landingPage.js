@@ -2,6 +2,7 @@ import { container, title } from "assets/jss/material-kit-react.js";
 
 const landingPageStyle = {
   container: {
+    marginTop: '-75px',
     zIndex: "12",
     color: "#FFFFFF",
     padding:'60px',

@@ -1,11 +1,55 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
-function CartProduct({products}) {
+const useStyles = makeStyles({
+    tableMargin: {
+        marginTop: '15px'
+    },
+    table: {
+        minWidth: 650,
+    },
+    cardImg: {
+        minWidth: '150px',
+        maxWidth: '150px',
+        minHeight: '85px',
+        maxHeight: '85px',
+    }
+});
+
+export default function BasicTable({ products }) {
+    const classes = useStyles();
+
     return (
-        products.map(product=>{
-            return <div>{product.product}</div>
-        })
+        <TableContainer className={classes.tableMargin} component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Producto</TableCell>
+                        <TableCell></TableCell>
+                        <TableCell >Descripcion</TableCell>
+                        <TableCell align="right">Categoria</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {products.map((row) => (
+                        <TableRow key={row.product}>
+                            <TableCell><img className={classes.cardImg} src={row.img} alt="..." /></TableCell>
+                            <TableCell component="th" scope="row">
+                                {row.product}
+                            </TableCell>
+                            <TableCell >{row.description}</TableCell>
+                            <TableCell align="right">{row.category}</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
     );
 }
-
-export default CartProduct;

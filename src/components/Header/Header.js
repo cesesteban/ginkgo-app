@@ -7,12 +7,12 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
+//import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
-import Drawer from "@material-ui/core/Drawer";
+//import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
+//import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/material-kit-react/components/headerStyle.js";
 
@@ -60,7 +60,7 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed,
   });
-  const brandComponent = <Button href='http://ginkgo.ar/' target="_blank" className={classes.title}>{brand}</Button>;
+  const brandComponent = <Button onClick={()=>{props.setCart('Catalog')}} className={classes.title}>{brand}</Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
@@ -74,10 +74,11 @@ export default function Header(props) {
             brandComponent
           )}
         </div>
-        <Hidden smDown implementation="css">
+        <Hidden >
           {rightLinks}
         </Hidden>
-        <Hidden mdUp>
+      </Toolbar>
+        {/* <Hidden mdUp>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -86,7 +87,7 @@ export default function Header(props) {
             <Menu />
           </IconButton>
         </Hidden>
-      </Toolbar>
+      
       <Hidden mdUp implementation="js">
         <Drawer
           variant="temporary"
@@ -102,7 +103,7 @@ export default function Header(props) {
             {rightLinks}
           </div>
         </Drawer>
-      </Hidden>
+      </Hidden> */}
     </AppBar>
   );
 }

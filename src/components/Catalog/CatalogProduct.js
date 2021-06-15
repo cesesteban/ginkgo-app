@@ -5,6 +5,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import products from '../../assets/products'
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles(styles);
 
@@ -25,9 +26,9 @@ function CatalogProduct({categoryProduct, setChange, setProduct}) {
     
     return (
         <div>
-            <Button className={classes.arrowBakc} onClick={arrowBack} color='inherit'>
+            <IconButton onClick={arrowBack} color='grey'>
                 <ArrowBackIcon />    
-            </Button>
+            </IconButton>
             <div className={classes.container}>
                 {products.map(product=>{
                     if(product.category===categoryProduct){return(<CardProduct viewDetails={viewDetails} onProduct={onProduct} product={product}/>)}            
