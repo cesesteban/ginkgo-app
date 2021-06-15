@@ -7,6 +7,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { removeProduct } from 'store/action';
+import { useDispatch } from 'react-redux';
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles({
     tableMargin: {
@@ -25,6 +29,7 @@ const useStyles = makeStyles({
 
 export default function BasicTable({ products }) {
     const classes = useStyles();
+    const dispatch = useDispatch()
 
     return (
         <TableContainer className={classes.tableMargin} component={Paper}>
@@ -32,19 +37,22 @@ export default function BasicTable({ products }) {
                 <TableHead>
                     <TableRow>
                         <TableCell>Producto</TableCell>
-                        <TableCell></TableCell>
-                        <TableCell >Descripcion</TableCell>
+                        <TableCell>Precio</TableCell>
+                        <TableCell align="right"></TableCell>
                         <TableCell align="right">Categoria</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {products.map((row) => (
                         <TableRow key={row.product}>
-                            <TableCell><img className={classes.cardImg} src={row.img} alt="..." /></TableCell>
-                            <TableCell component="th" scope="row">
+                            <TableCell>
+                                <IconButton onClick={()=>dispatch(removeProduct(row.product))}>
+                                    <DeleteOutlineIcon />
+                                </IconButton>
                                 {row.product}
                             </TableCell>
-                            <TableCell >{row.description}</TableCell>
+                            <TableCell></TableCell>
+                            <TableCell align="right"><img className={classes.cardImg} src={row.img} alt="..." /></TableCell>
                             <TableCell align="right">{row.category}</TableCell>
                         </TableRow>
                     ))}
