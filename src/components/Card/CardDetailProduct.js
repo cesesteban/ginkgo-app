@@ -111,7 +111,7 @@ export default function CardDetailProduct({ setChange, product }) {
                                 {product.description}
                             </p>
                             <Button onClick={() => { addToCart(product) }} color="secondary">
-                                Comprar
+                                Agregar al carrito
                             </Button>
                         </CardBody>
                     </Card>

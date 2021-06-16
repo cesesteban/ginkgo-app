@@ -75,7 +75,7 @@ export default function BasicTable({ products }) {
                 </TableBody>
             </Table>
         <div className={classes.button}>
-            <Button onClick={() => { onSubmit() }}>Consultar</Button>
+            <Button onClick={() => { onSubmit() }}>Pedir por WhatsApp</Button>
         </div>
         </TableContainer>
     );
