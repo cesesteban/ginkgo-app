@@ -24,7 +24,7 @@ export default function LandingPage(props) {
         setCart={setCart}
         color="white"
         routes={dashboardRoutes}
-        brand="GINKGO"
+        brand="MINIMAL SHOP"
         rightLinks={<HeaderLinks products={products} setCart={setCart}/>}
         fixed
         changeColorOnScroll={{
