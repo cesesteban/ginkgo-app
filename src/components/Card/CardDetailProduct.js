@@ -18,8 +18,8 @@ const styles = {
     cardImg:{
         maxWidth: 285,
         minWidth: '285px',
-        maxHeight: '295px',
-        minHeight: '295px',
+        maxHeight: '155px',
+        minHeight: '155px',
     },
     description: {
         margin: "1.071rem auto 0",
