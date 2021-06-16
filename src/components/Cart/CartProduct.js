@@ -42,7 +42,7 @@ export default function BasicTable({ products }) {
         
         let url = `https://api.whatsapp.com/send?phone=+5491130762039&text=
         *MINIMAL SHOP*%0A%0A
-        *Consulta sobre:*%0A%0A
+        *Tu pedido:*%0A%0A
         ${arrayProduct.join('%20/')}`;
         window.open(url)
     }
