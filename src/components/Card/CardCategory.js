@@ -22,6 +22,7 @@ export default function CardCategory({category,setChange,setCategoryProduct}) {
     function onSubmit(){
         setChange('Product')
         setCategoryProduct(category.category)
+        window.scrollTo(0, 0)
     }
 
     return (

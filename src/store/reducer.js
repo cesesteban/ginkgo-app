@@ -14,7 +14,6 @@ function rootReducer(state = initialState, action) {
         }
     }
     if (action.type === REMOVE_PRODUCT) {
-        console.log('payload',action.payload)
         return {
             ...state,
             products: state.products.filter(product=>product.product!=action.payload)

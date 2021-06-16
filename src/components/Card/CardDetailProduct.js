@@ -16,10 +16,10 @@ import { addProduct } from '../../store/action'
 
 const styles = {
     cardImg:{
-        maxWidth: "275px",
-        minWidth: "275px",  
-        maxHeight: "150px",
-        minHeight: "150px", 
+        maxWidth: 285,
+        minWidth: '285px',
+        maxHeight: '295px',
+        minHeight: '295px',
     },
     description: {
         margin: "1.071rem auto 0",
@@ -90,6 +90,7 @@ export default function CardDetailProduct({ setChange, product }) {
     function addToCart(product) {
         console.log(product)
         dispatch(addProduct(product))
+        window.scrollTo(0, 0)
     }
 
     return (

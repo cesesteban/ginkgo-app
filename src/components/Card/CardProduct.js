@@ -21,6 +21,7 @@ export default function CardProduct({product,onProduct,viewDetails}) {
     function onsubmit(){
         onProduct(product)
         viewDetails()
+        window.scrollTo(0, 0)
     }
     return (
         <Card className={classes.root}>
